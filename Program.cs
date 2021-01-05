@@ -18,7 +18,7 @@ namespace DSA_Assignement_1
 
             do
             {
-                Console.WriteLine("Welcome in the menu !\nThere are the differents possibilities:\nEnter 1 to add a student.\nEnter 2 to get an element with its index.\nEnter 3 to remove an element by its index.\nEnter 4 to remove the first element.\nEnter 5 to remove the last element.\nEnter 6 to display the list.\n");
+                Console.WriteLine("Welcome in the menu !\nThere are the differents possibilities:\nEnter 1 to add a student.\nEnter 2 to get an element with its index.\nEnter 3 to remove an element by its index.\nEnter 4 to remove the first element.\nEnter 5 to remove the last element.\nEnter 6 to display the list.\nEnter 7 to sort.\nEnter 8 to get the student with the best average score.\nEnter 9 to get the student with the worst average score.\n");
                 int possibility = Convert.ToInt32(Console.ReadLine());
                 switch (possibility)
                 {
@@ -82,6 +82,22 @@ namespace DSA_Assignement_1
 
                     case 6:
                         studentsList.DisplayList();
+                        break;
+
+                    case 7:
+                        Console.WriteLine("Please enter 0 if you want by increasing or 1 if you want a decreasing:");
+                        int sortDirection = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Please enter 1 if you want sort by the first name of the student, 2 sort by the last name of the student, 3 sort by the student number or 4 sort by the average grade:");
+                        int sortField = Convert.ToInt32(Console.ReadLine());
+                        studentsList.Sort(sortDirection, sortField);
+                        break;
+
+                    case 8:
+                        studentsList.GetMaxElement();
+                        break;
+
+                    case 9:
+                        studentsList.GetMinElement();
                         break;
 
                 }
